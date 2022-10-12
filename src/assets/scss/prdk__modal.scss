@@ -1,0 +1,57 @@
+@import "virable/main_var";
+@import "mixins/main_mixins";
+@import "libre/reset";
+//@import "fonts";
+@import "libre/grid";
+@import "libre/main_libre";
+
+$prdk-bg-color: rgba(0, 0, 0, 0.7);
+$prdk-bg-content-color: rgba(255, 255, 255, 1);
+$prdk-content-sizeW: 70%;
+$prdk-body-positionFlex: flex-start;
+$prdk-body-mt: 100px;
+$prdk-body-radius: 5px;
+$prdk-body-shadow: 0 0 3px #111111;
+$prdk-body-colorText: #111111;
+$prdk-body-padding: 20px;
+
+#main {
+  position: fixed;
+  width: 100%;
+}
+.prdk__modal {
+  &__window {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr $prdk-content-sizeW 1fr;
+    background-color: $prdk-bg-color;
+    &-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: $prdk-body-positionFlex;
+      margin-top: $prdk-body-mt;
+    }
+  }
+  &__body {
+    width: 100%;
+    min-height: 100px;
+    background-color: $prdk-bg-content-color;
+    border-radius: $prdk-body-radius;
+    box-shadow: $prdk-body-shadow;
+    overflow: hidden;
+    color: $prdk-body-colorText;
+    padding: $prdk-body-padding;
+    &-top {
+      margin-bottom: $prdk-body-padding;
+      display: flex;
+      justify-content: space-between;
+    }
+    &-content {
+
+    }
+  }
+}
